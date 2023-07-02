@@ -2,6 +2,6 @@ _extends: .github
 
 repository:
   name: relazy
-  description: 👤 Tool for lazy people to create new git releases
+  description: ⚙️ Tool for lazy people to create new git releases
   homepage: https://nucleos.rocks
-  topics: hacktoberfest, symfony, command, release, git, tag
+  topics: hacktoberfest, symfony, command, release, tag, semantic versioning, version

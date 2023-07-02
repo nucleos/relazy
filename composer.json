@@ -1,0 +1,53 @@
+{
+    "name": "nucleos/relazy",
+    "description": "relazy - The lazy release tool",
+    "license": "MIT",
+    "keywords": [
+        "command",
+        "release",
+        "tag",
+        "version",
+        "semantic versioning"
+    ],
+    "authors": [
+        {
+            "name": "Christian Gripp",
+            "email": "mail@core23.de"
+        }
+    ],
+    "homepage": "https://github.com/nucleos/relazy",
+    "support": {
+        "issues": "https://github.com/nucleos/relazy/issues"
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "symfony/console": "^6.3",
+        "symfony/dependency-injection": "^6.3",
+        "symfony/process": "^6.3",
+        "vierbergenlars/php-semver": "^3.0.4"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.31"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nucleos\\Relazy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nucleos\\Relazy\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "relazy"
+    ],
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        },
+        "bin-dir": "bin",
+        "sort-packages": true
+    }
+}
