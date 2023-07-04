@@ -1,0 +1,29 @@
+{
+    "alias": "relazy.phar",
+    "chmod": "0755",
+    "directories": [
+        "src"
+    ],
+    "files": [
+        "autoload.php",
+        "command.php",
+        "LICENSE",
+        "relazy"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": [
+                "tests"
+            ],
+            "in": [
+                "vendor",
+                "src"
+            ]
+        }
+    ],
+    "git-version": "package_version",
+    "main": "relazy",
+    "output": "relazy.phar",
+    "stub": true
+}
