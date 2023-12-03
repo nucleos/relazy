@@ -11,6 +11,4 @@
 
 namespace Nucleos\Relazy\Exception;
 
-class NoReleaseFoundException extends RelazyException
-{
-}
+class NoReleaseFoundException extends RelazyException {}

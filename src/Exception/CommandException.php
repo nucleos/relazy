@@ -11,6 +11,4 @@
 
 namespace Nucleos\Relazy\Exception;
 
-class CommandException extends RelazyException
-{
-}
+class CommandException extends RelazyException {}
