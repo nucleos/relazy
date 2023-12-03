@@ -13,6 +13,4 @@ namespace Nucleos\Relazy\Exception;
 
 use RuntimeException;
 
-class RelazyException extends RuntimeException
-{
-}
+class RelazyException extends RuntimeException {}
