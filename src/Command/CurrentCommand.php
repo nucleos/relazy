@@ -15,17 +15,17 @@ use Nucleos\Relazy\Config\RelazyConfig;
 use Nucleos\Relazy\Context;
 use Nucleos\Relazy\Exception\NoReleaseFoundException;
 use Nucleos\Relazy\Output\Console;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 
+#[AsCommand(name: 'current')]
 final class CurrentCommand extends BaseCommand
 {
     private const VCS_TAG = 'vcs-tag';
 
     private const RAW = 'raw';
-
-    protected static $defaultName = 'current';
 
     protected function configure(): void
     {

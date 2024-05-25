@@ -21,19 +21,19 @@ use Nucleos\Relazy\Interaction\InteractionRequest;
 use Nucleos\Relazy\Interaction\InteractionRequestAware;
 use Nucleos\Relazy\Interaction\InteractionType;
 use Nucleos\Relazy\Output\Console;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+#[AsCommand(name: 'release')]
 final class ReleaseCommand extends BaseCommand
 {
     private const CONFIRM_FIRST = 'confirm-first';
 
     private const DRY_RUN = 'dry-run';
-
-    protected static $defaultName = 'release';
 
     protected function configure(): void
     {

@@ -15,17 +15,17 @@ use Nucleos\Relazy\Config\RelazyConfig;
 use Nucleos\Relazy\Context;
 use Nucleos\Relazy\Exception\NoReleaseFoundException;
 use Nucleos\Relazy\Output\Console;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 
+#[AsCommand(name: 'changes')]
 final class ChangesCommand extends BaseCommand
 {
     private const EXCLUDE_MERGE_COMMITS = 'exclude-merge-commits';
 
     private const FILES  = 'files';
-
-    protected static $defaultName = 'changes';
 
     protected function configure(): void
     {
