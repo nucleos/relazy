@@ -41,6 +41,9 @@ final class PublishAction extends BaseAction implements InteractionRequestAware
         $this->askRemoteName   = $askRemoteName   ?? false;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
     public function execute(Context $context, Console $console): void
     {
         if ($this->askConfirmation) {

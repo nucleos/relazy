@@ -131,6 +131,9 @@ final class InteractionRequest
         $this->hasValue = true;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     */
     public function validate(mixed $value): mixed
     {
         switch ($this->type) {

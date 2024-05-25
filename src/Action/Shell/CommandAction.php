@@ -35,6 +35,9 @@ class CommandAction extends BaseAction
         $this->timeout        = $timeout;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
     public function execute(Context $context, Console $console): void
     {
         $command = $this->command;

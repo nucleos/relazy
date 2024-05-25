@@ -75,6 +75,9 @@ final class MarkdownFormatter extends SemanticFormatter
     }
 
     /**
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     *
      * @param string[] $lines
      */
     protected function findPositionToInsert(array $lines, ReleaseType $type): int

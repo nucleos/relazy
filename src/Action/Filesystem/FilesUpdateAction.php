@@ -37,6 +37,9 @@ final class FilesUpdateAction extends BaseAction
         $this->files = $files;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
     public function execute(Context $context, Console $console): void
     {
         $currentVersion = $context->getCurrentVersion();

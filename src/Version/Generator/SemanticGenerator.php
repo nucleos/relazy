@@ -43,6 +43,11 @@ final class SemanticGenerator implements Generator, InteractionRequestAware
         $this->type       = $type;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function generateNextVersion(Context $context): string
     {
         $type = ReleaseType::from($this->type ?? $context->getInformationCollection()->getValue(self::TYPE));
