@@ -1,4 +1,5 @@
 #!/usr/bin/env php
 <?php
+error_reporting(E_ALL & ~E_DEPRECATED);
 define('RELAZY_ROOT_DIR', getcwd());
 require 'command.php';
