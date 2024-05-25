@@ -37,7 +37,7 @@ abstract class BaseCommand extends Command
 
     private ?RelazyConfig $config = null;
 
-    public function __construct(string $name = null)
+    public function __construct(?string $name = null)
     {
         $this->informationCollector = new InteractionCollector();
 

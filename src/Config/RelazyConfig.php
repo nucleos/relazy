@@ -44,7 +44,7 @@ class RelazyConfig
      */
     private array $postReleaseActions = [];
 
-    public function __construct(VersionControl $vcs = null)
+    public function __construct(?VersionControl $vcs = null)
     {
         $this->vcs = $vcs ?? new Noop();
     }

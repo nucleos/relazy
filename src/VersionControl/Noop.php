@@ -23,13 +23,9 @@ class Noop implements VersionControl
         return [];
     }
 
-    public function createTag(string $name): void
-    {
-    }
+    public function createTag(string $name): void {}
 
-    public function publishTag(string $tagName, ?string $remote = null): void
-    {
-    }
+    public function publishTag(string $tagName, ?string $remote = null): void {}
 
     public function getAllModificationsSince(string $tag, bool $color = true, bool $noMergeCommits = false): array
     {
@@ -46,11 +42,7 @@ class Noop implements VersionControl
         return [];
     }
 
-    public function saveWorkingCopy(string $commitMsg = '', array $filter = []): void
-    {
-    }
+    public function saveWorkingCopy(string $commitMsg = '', array $filter = []): void {}
 
-    public function publishChanges(?string $remote = null): void
-    {
-    }
+    public function publishChanges(?string $remote = null): void {}
 }

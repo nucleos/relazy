@@ -33,7 +33,7 @@ abstract class BaseAction implements Action
     /**
      * Execute a command and render the output through the classical indented output.
      */
-    final protected function executeCommand(Console $console, string $command, float $timeout = null): Process
+    final protected function executeCommand(Console $console, string $command, ?float $timeout = null): Process
     {
         $console->writeLine(sprintf("<comment>%s</comment>\n\n", $command));
 
