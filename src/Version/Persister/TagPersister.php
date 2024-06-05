@@ -48,12 +48,6 @@ final class TagPersister implements Persister
         // Extract versions from tags and sort them
         $versions = $this->getVersionFromTags($tags, $context);
 
-        if ([] === $versions) {
-            throw new NoReleaseFoundException('No versions found in tag list');
-        }
-
-        usort($versions, [$context->versionGenerator, 'compareVersions']);
-
         if ($this->versionedBranch) {
             $branchVersions = $this->getPrefixedVersions($context, $versions);
 
@@ -61,6 +55,8 @@ final class TagPersister implements Persister
                 $versions = $branchVersions;
             }
         }
+
+        \assert([] !== $versions);
 
         return array_pop($versions);
     }
@@ -102,9 +98,16 @@ final class TagPersister implements Persister
     private function getVersionFromTags(array $tags, Context $context): array
     {
         $versions = [];
+
         foreach ($tags as $tag) {
             $versions[] = $this->getVersionFromTag($tag, $context);
         }
+
+        if ([] === $versions) {
+            throw new NoReleaseFoundException('No versions found in tag list');
+        }
+
+        usort($versions, [$context->versionGenerator, 'compareVersions']);
 
         return $versions;
     }
