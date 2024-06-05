@@ -22,10 +22,13 @@ final class TagPersister implements Persister
 
     private readonly string $tagPrefix;
 
-    public function __construct(?string $tagPattern = null, ?string $tagPrefix = null)
+    private readonly bool $versionedBranch;
+
+    public function __construct(?string $tagPattern = null, ?string $tagPrefix = null, bool $versionedBranch = true)
     {
-        $this->tagPrefix    = $tagPrefix ?? '';
-        $this->versionRegex = $tagPattern;
+        $this->tagPrefix       = $tagPrefix ?? '';
+        $this->versionRegex    = $tagPattern;
+        $this->versionedBranch = $versionedBranch;
     }
 
     public function getCurrentVersion(Context $context): string
@@ -50,6 +53,14 @@ final class TagPersister implements Persister
         }
 
         usort($versions, [$context->versionGenerator, 'compareVersions']);
+
+        if ($this->versionedBranch) {
+            $branchVersions = $this->getPrefixedVersions($context, $versions);
+
+            if ([] !== $branchVersions) {
+                $versions = $branchVersions;
+            }
+        }
 
         return array_pop($versions);
     }
@@ -134,5 +145,24 @@ final class TagPersister implements Persister
         }
 
         return $userTag;
+    }
+
+    /**
+     * @param string[] $versions
+     *
+     * @return string[]
+     */
+    private function getPrefixedVersions(Context $context, array $versions): array
+    {
+        $currentBranch = $context->getVersionControl()->getCurrentBranch();
+        $branchPrefix  = preg_replace('/^(\d+(?:\.\d)?(?:\.\d)?\.?).*/', '$1', $currentBranch) ?? '';
+
+        if ('' === $currentBranch) {
+            return [];
+        }
+
+        return array_filter($versions, static function ($version) use ($branchPrefix) {
+            return str_starts_with($version, $branchPrefix);
+        });
     }
 }
