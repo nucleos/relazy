@@ -124,10 +124,6 @@ final class ReleaseCommand extends BaseCommand
         try {
             $currentVersion = $context->versionPersister->getCurrentVersion($context);
         } catch (NoReleaseFoundException $e) {
-            if (false === $this->informationCollector->getValue(self::CONFIRM_FIRST)) {
-                throw $e;
-            }
-
             $currentVersion = $context->getInitialVersion();
         }
 
