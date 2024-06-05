@@ -28,7 +28,7 @@ final class InteractionCollector implements InteractionCollection
         $name = $request->getName();
 
         if ($this->hasRequest($name)) {
-            throw new RelazyException(sprintf('Request [%s] already registered', $name));
+            return;
         }
 
         $this->requests[$name] = $request;
