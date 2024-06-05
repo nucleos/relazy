@@ -69,6 +69,6 @@ final class AddTopFormatter implements Formatter
 
     public function getLastVersionRegex(): string
     {
-        return '#.*#';
+        return '#(\d+\.\d+\.\d+.*)#';
     }
 }

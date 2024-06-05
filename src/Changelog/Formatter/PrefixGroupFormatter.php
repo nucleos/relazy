@@ -102,7 +102,7 @@ final class PrefixGroupFormatter implements Formatter
 
     public function getLastVersionRegex(): string
     {
-        return '#.*#';
+        return '/\[(\d+\.\d+\.\d+.*)\]/';
     }
 
     private function getFormattedDate(): string
