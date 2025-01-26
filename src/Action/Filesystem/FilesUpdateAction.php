@@ -54,8 +54,14 @@ final class FilesUpdateAction extends BaseAction
         }
 
         foreach ($this->files as $file => $pattern) {
-            if (file_exists($file)) {
-                throw new CommandException(sprintf('File %s does not exist', $file));
+            $originalFile = $file;
+
+            if (!file_exists($file)) {
+                $file = $context->getProjectRoot().$file;
+            }
+
+            if (!file_exists($file)) {
+                throw new CommandException(sprintf('File %s does not exist', $originalFile));
             }
 
             if ($context->isDryRun()) {
@@ -70,6 +76,8 @@ final class FilesUpdateAction extends BaseAction
 
     private function updateFile(string $filename, ?string $pattern, string $currentVersion, string $nextVersion): void
     {
+        echo $filename;
+
         $content = file_get_contents($filename);
 
         if (false === $content) {
