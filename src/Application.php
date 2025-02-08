@@ -30,7 +30,7 @@ final class Application extends BaseApplication
         $this->add(new ChangesCommand());
     }
 
-    public function add(Command $command): ?Command
+    public function add(Command $command): Command
     {
         $command = parent::add($command);
 
