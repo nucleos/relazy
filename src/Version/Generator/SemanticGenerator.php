@@ -44,9 +44,9 @@ final class SemanticGenerator implements Generator, InteractionRequestAware
     }
 
     /**
-     * @SuppressWarnings(PHPMD.NPathComplexity)
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.NPathComplexity")
+     * @SuppressWarnings("PHPMD.CyclomaticComplexity")
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      */
     public function generateNextVersion(Context $context): string
     {
