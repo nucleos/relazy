@@ -43,7 +43,7 @@ final class Git implements VersionControl
     {
         $files = [];
 
-        $lines  = array_filter($this->executeGitCommand(\sprintf('diff --name-status %s..HEAD', $tag)));
+        $lines  = array_filter($this->executeGitCommand(\sprintf('diff --name-status %s..HEAD', $tag)), static function (string $line) { return '' !== $line; });
 
         foreach ($lines as $line) {
             [$state, $file] = explode("\t", (string) $line);
