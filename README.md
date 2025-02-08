@@ -11,7 +11,6 @@ relazy
 
 [![Continuous Integration](https://github.com/nucleos/relazy/actions/workflows/continuous-integration.yml/badge.svg?event=push)](https://github.com/nucleos/relazy/actions?query=workflow%3A"Continuous+Integration"+event%3Apush)
 [![Code Coverage](https://codecov.io/gh/nucleos/relazy/graph/badge.svg)](https://codecov.io/gh/nucleos/relazy)
-[![Type Coverage](https://shepherd.dev/github/nucleos/relazy/coverage.svg)](https://shepherd.dev/github/nucleos/relazy)
 
 Relazy is a handy tool to help releasing new versions of your software. You can define the type
 of version generator you want to use (e.g. semantic versioning), where you want to store
