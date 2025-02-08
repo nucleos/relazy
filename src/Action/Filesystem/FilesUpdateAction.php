@@ -38,7 +38,7 @@ final class FilesUpdateAction extends BaseAction
     }
 
     /**
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings("PHPMD.NPathComplexity")
      */
     public function execute(Context $context, Console $console): void
     {

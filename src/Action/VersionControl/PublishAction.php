@@ -42,7 +42,7 @@ final class PublishAction extends BaseAction implements InteractionRequestAware
     }
 
     /**
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings("PHPMD.NPathComplexity")
      */
     public function execute(Context $context, Console $console): void
     {

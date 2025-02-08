@@ -132,7 +132,7 @@ final class InteractionRequest
     }
 
     /**
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings("PHPMD.CyclomaticComplexity")
      */
     public function validate(mixed $value): mixed
     {
