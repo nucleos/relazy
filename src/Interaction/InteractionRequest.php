@@ -99,9 +99,9 @@ final class InteractionRequest
 
     public function convertToCommandOption(): InputOption
     {
-        $mode = InteractionType::YES_NO === $this->type || InteractionType::CONFIRMATION === $this->type ?
-            InputOption::VALUE_NONE :
-            InputOption::VALUE_REQUIRED;
+        $mode = InteractionType::YES_NO === $this->type || InteractionType::CONFIRMATION === $this->type
+            ? InputOption::VALUE_NONE
+            : InputOption::VALUE_REQUIRED;
 
         return new InputOption(
             $this->name,

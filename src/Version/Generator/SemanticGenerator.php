@@ -77,20 +77,16 @@ final class SemanticGenerator implements Generator, InteractionRequestAware
             }
 
             if ('none' !== $label) {
-                $labelVersion = '';
-
                 // increment label
-                if (\array_key_exists(3, $matches)) {
-                    $oldLabel     = $matches[3];
-                    $labelVersion = 2;
+                $oldLabel     = $matches[3];
+                $labelVersion = 2;
 
-                    // if label is new clear version
-                    if ($label !== $oldLabel) {
-                        $labelVersion = '';
-                    } elseif (\array_key_exists(4, $matches)) {
-                        // if version exists increment it
-                        $labelVersion = (int) $matches[4] + 1;
-                    }
+                // if label is new clear version
+                if ($label !== $oldLabel) {
+                    $labelVersion = '';
+                } elseif (\array_key_exists(4, $matches)) {
+                    // if version exists increment it
+                    $labelVersion = (int) $matches[4] + 1;
                 }
 
                 return implode('.', [$major, $minor, $patch]).'-'.$label.$labelVersion;
