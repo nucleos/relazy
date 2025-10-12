@@ -20,7 +20,7 @@
         "issues": "https://github.com/nucleos/relazy/issues"
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "ext-json": "*",
         "symfony/console": "^7.0",
         "symfony/dependency-injection": "^7.0",
