@@ -23,14 +23,14 @@ final class Application extends BaseApplication
     {
         parent::__construct('relazy - The lazy release tool', self::RELAZY_VERSION);
 
-        $this->add(new ReleaseCommand());
-        $this->add(new CurrentCommand());
-        $this->add(new ChangesCommand());
+        $this->addCommand(new ReleaseCommand());
+        $this->addCommand(new CurrentCommand());
+        $this->addCommand(new ChangesCommand());
     }
 
-    public function add(Command $command): Command
+    public function add(callable|Command $command): Command
     {
-        $command = parent::add($command);
+        $command = parent::addCommand($command);
 
         \assert(null !== $command);
 
